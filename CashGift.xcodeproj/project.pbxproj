@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6418807CC89ABE725AA0969A /* Pods_CashGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE637CED08F76433C95B1AC /* Pods_CashGift.framework */; };
+		D406FB4B1E55A22000A840FA /* DataSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D406FB4A1E55A22000A840FA /* DataSetVC.m */; };
+		D40F388F23BDBD8100C28EB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40F388E23BDBD8000C28EB9 /* Assets.xcassets */; };
+		D41893F21E558DD600978041 /* DataDefineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D41893F11E558DD600978041 /* DataDefineVC.m */; };
+		D447F4EA1E4D6C4600E04578 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4E91E4D6C4600E04578 /* JavaScriptCore.framework */; };
+		D447F4EC1E4D6C4E00E04578 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4EB1E4D6C4E00E04578 /* Security.framework */; };
+		D447F4F21E4D6C7F00E04578 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F11E4D6C7F00E04578 /* libstdc++.tbd */; };
+		D447F4F41E4D6C8C00E04578 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F31E4D6C8C00E04578 /* CoreGraphics.framework */; };
+		D447F4F61E4D6C9700E04578 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F51E4D6C9700E04578 /* CoreLocation.framework */; };
+		D447F4F81E4D6CC000E04578 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F71E4D6CC000E04578 /* SystemConfiguration.framework */; };
+		D447F4FA1E4D6D2A00E04578 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F91E4D6D2A00E04578 /* libz.1.2.5.tbd */; };
+		D447F4FC1E4D6D3900E04578 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4FB1E4D6D3900E04578 /* CoreTelephony.framework */; };
+		D449157C1E56A0BC0096CF5D /* ConfigSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = D449157B1E56A0BC0096CF5D /* ConfigSetting.m */; };
+		D44915841E56FA7B0096CF5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D44915831E56FA7B0096CF5D /* libsqlite3.tbd */; };
+		D46B28951E4C5AC00027CCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B28941E4C5AC00027CCC5 /* main.m */; };
+		D46B28981E4C5AC00027CCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B28971E4C5AC00027CCC5 /* AppDelegate.m */; };
+		D46B289B1E4C5AC00027CCC5 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B289A1E4C5AC00027CCC5 /* HomeTabBarController.m */; };
+		D46C78201E52F6FF005DD349 /* EditBanquetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C781F1E52F6FF005DD349 /* EditBanquetVC.m */; };
+		D46C78231E52F876005DD349 /* BaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C78221E52F876005DD349 /* BaseVC.m */; };
+		D46C78251E52FBBC005DD349 /* ZWMultiColView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46C78241E52FBBC005DD349 /* ZWMultiColView.framework */; };
+		D46C78281E530299005DD349 /* AddParticipantVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D46C78271E530299005DD349 /* AddParticipantVC.m */; };
+		D48FAC781E4DA4C000B9E1B8 /* BanquetRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAC771E4DA4C000B9E1B8 /* BanquetRecordVC.m */; };
+		D48FAC7C1E4DBF3900B9E1B8 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D48FAC7B1E4DBF3900B9E1B8 /* SettingVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08E51FF690572A606F993C5E /* Pods-CashGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashGift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashGift/Pods-CashGift.release.xcconfig"; sourceTree = "<group>"; };
+		2CE637CED08F76433C95B1AC /* Pods_CashGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9B90E4189D43E7A7FBB1D4F /* Pods-CashGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashGift/Pods-CashGift.debug.xcconfig"; sourceTree = "<group>"; };
+		D406FB481E5596F100A840FA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D406FB491E55A22000A840FA /* DataSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSetVC.h; path = Function/Setting/DataSetVC.h; sourceTree = "<group>"; };
+		D406FB4A1E55A22000A840FA /* DataSetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataSetVC.m; path = Function/Setting/DataSetVC.m; sourceTree = "<group>"; };
+		D40F388E23BDBD8000C28EB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D41893F01E558DD600978041 /* DataDefineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataDefineVC.h; path = Function/Setting/DataDefineVC.h; sourceTree = "<group>"; };
+		D41893F11E558DD600978041 /* DataDefineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataDefineVC.m; path = Function/Setting/DataDefineVC.m; sourceTree = "<group>"; };
+		D447F4E91E4D6C4600E04578 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		D447F4EB1E4D6C4E00E04578 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D447F4ED1E4D6C5700E04578 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D447F4EF1E4D6C6000E04578 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D447F4F11E4D6C7F00E04578 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		D447F4F31E4D6C8C00E04578 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D447F4F51E4D6C9700E04578 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D447F4F71E4D6CC000E04578 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D447F4F91E4D6D2A00E04578 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		D447F4FB1E4D6D3900E04578 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D449157A1E56A0BC0096CF5D /* ConfigSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSetting.h; sourceTree = "<group>"; };
+		D449157B1E56A0BC0096CF5D /* ConfigSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSetting.m; sourceTree = "<group>"; };
+		D44915831E56FA7B0096CF5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D46B28901E4C5AC00027CCC5 /* CashGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46B28941E4C5AC00027CCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D46B28961E4C5AC00027CCC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D46B28971E4C5AC00027CCC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D46B28991E4C5AC00027CCC5 /* HomeTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
+		D46B289A1E4C5AC00027CCC5 /* HomeTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
+		D46B28A41E4C5AC10027CCC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D46C781E1E52F6FF005DD349 /* EditBanquetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditBanquetVC.h; path = Function/Banquet/EditBanquetVC.h; sourceTree = "<group>"; };
+		D46C781F1E52F6FF005DD349 /* EditBanquetVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditBanquetVC.m; path = Function/Banquet/EditBanquetVC.m; sourceTree = "<group>"; };
+		D46C78211E52F876005DD349 /* BaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseVC.h; sourceTree = "<group>"; };
+		D46C78221E52F876005DD349 /* BaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseVC.m; sourceTree = "<group>"; };
+		D46C78241E52FBBC005DD349 /* ZWMultiColView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZWMultiColView.framework; path = CashGift/ThirdPart/ZWMultiColView.framework; sourceTree = "<group>"; };
+		D46C78261E530299005DD349 /* AddParticipantVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddParticipantVC.h; path = Function/Banquet/AddParticipantVC.h; sourceTree = "<group>"; };
+		D46C78271E530299005DD349 /* AddParticipantVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddParticipantVC.m; path = Function/Banquet/AddParticipantVC.m; sourceTree = "<group>"; };
+		D48FAC761E4DA4C000B9E1B8 /* BanquetRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BanquetRecordVC.h; path = Function/Banquet/BanquetRecordVC.h; sourceTree = "<group>"; };
+		D48FAC771E4DA4C000B9E1B8 /* BanquetRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BanquetRecordVC.m; path = Function/Banquet/BanquetRecordVC.m; sourceTree = "<group>"; };
+		D48FAC7A1E4DBF3900B9E1B8 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingVC.h; path = Function/Setting/SettingVC.h; sourceTree = "<group>"; };
+		D48FAC7B1E4DBF3900B9E1B8 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingVC.m; path = Function/Setting/SettingVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D46B288D1E4C5AC00027CCC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D44915841E56FA7B0096CF5D /* libsqlite3.tbd in Frameworks */,
+				D447F4FC1E4D6D3900E04578 /* CoreTelephony.framework in Frameworks */,
+				D447F4FA1E4D6D2A00E04578 /* libz.1.2.5.tbd in Frameworks */,
+				D447F4F81E4D6CC000E04578 /* SystemConfiguration.framework in Frameworks */,
+				D447F4F61E4D6C9700E04578 /* CoreLocation.framework in Frameworks */,
+				D46C78251E52FBBC005DD349 /* ZWMultiColView.framework in Frameworks */,
+				D447F4F41E4D6C8C00E04578 /* CoreGraphics.framework in Frameworks */,
+				D447F4F21E4D6C7F00E04578 /* libstdc++.tbd in Frameworks */,
+				D447F4EC1E4D6C4E00E04578 /* Security.framework in Frameworks */,
+				D447F4EA1E4D6C4600E04578 /* JavaScriptCore.framework in Frameworks */,
+				6418807CC89ABE725AA0969A /* Pods_CashGift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		638CD516307198E26B6BD1DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9B90E4189D43E7A7FBB1D4F /* Pods-CashGift.debug.xcconfig */,
+				08E51FF690572A606F993C5E /* Pods-CashGift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BAAA7A2B48181A6193DDB79C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D44915831E56FA7B0096CF5D /* libsqlite3.tbd */,
+				D447F4FB1E4D6D3900E04578 /* CoreTelephony.framework */,
+				D447F4F91E4D6D2A00E04578 /* libz.1.2.5.tbd */,
+				D447F4F71E4D6CC000E04578 /* SystemConfiguration.framework */,
+				D447F4F51E4D6C9700E04578 /* CoreLocation.framework */,
+				D447F4F31E4D6C8C00E04578 /* CoreGraphics.framework */,
+				D447F4F11E4D6C7F00E04578 /* libstdc++.tbd */,
+				D447F4EF1E4D6C6000E04578 /* libc++.tbd */,
+				D447F4ED1E4D6C5700E04578 /* libz.tbd */,
+				D447F4EB1E4D6C4E00E04578 /* Security.framework */,
+				D447F4E91E4D6C4600E04578 /* JavaScriptCore.framework */,
+				2CE637CED08F76433C95B1AC /* Pods_CashGift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D447F4E51E4D6B5C00E04578 /* ThirdPart */ = {
+			isa = PBXGroup;
+			children = (
+				D46C78241E52FBBC005DD349 /* ZWMultiColView.framework */,
+			);
+			name = ThirdPart;
+			sourceTree = "<group>";
+		};
+		D46B28871E4C5AC00027CCC5 = {
+			isa = PBXGroup;
+			children = (
+				D46B28921E4C5AC00027CCC5 /* CashGift */,
+				D447F4E51E4D6B5C00E04578 /* ThirdPart */,
+				D46B28911E4C5AC00027CCC5 /* Products */,
+				638CD516307198E26B6BD1DC /* Pods */,
+				BAAA7A2B48181A6193DDB79C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D46B28911E4C5AC00027CCC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D46B28901E4C5AC00027CCC5 /* CashGift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D46B28921E4C5AC00027CCC5 /* CashGift */ = {
+			isa = PBXGroup;
+			children = (
+				D40F388E23BDBD8000C28EB9 /* Assets.xcassets */,
+				D46B28961E4C5AC00027CCC5 /* AppDelegate.h */,
+				D46B28971E4C5AC00027CCC5 /* AppDelegate.m */,
+				D46B28991E4C5AC00027CCC5 /* HomeTabBarController.h */,
+				D46B289A1E4C5AC00027CCC5 /* HomeTabBarController.m */,
+				D46C78211E52F876005DD349 /* BaseVC.h */,
+				D46C78221E52F876005DD349 /* BaseVC.m */,
+				D449157A1E56A0BC0096CF5D /* ConfigSetting.h */,
+				D449157B1E56A0BC0096CF5D /* ConfigSetting.m */,
+				D48FAC751E4DA49500B9E1B8 /* BanquetRecord */,
+				D48FAC791E4DBF2200B9E1B8 /* Setting */,
+				D46B28A41E4C5AC10027CCC5 /* Info.plist */,
+				D46B28931E4C5AC00027CCC5 /* Supporting Files */,
+				D406FB481E5596F100A840FA /* PrefixHeader.pch */,
+			);
+			path = CashGift;
+			sourceTree = "<group>";
+		};
+		D46B28931E4C5AC00027CCC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D46B28941E4C5AC00027CCC5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D48FAC751E4DA49500B9E1B8 /* BanquetRecord */ = {
+			isa = PBXGroup;
+			children = (
+				D48FAC761E4DA4C000B9E1B8 /* BanquetRecordVC.h */,
+				D48FAC771E4DA4C000B9E1B8 /* BanquetRecordVC.m */,
+				D46C781E1E52F6FF005DD349 /* EditBanquetVC.h */,
+				D46C781F1E52F6FF005DD349 /* EditBanquetVC.m */,
+				D46C78261E530299005DD349 /* AddParticipantVC.h */,
+				D46C78271E530299005DD349 /* AddParticipantVC.m */,
+			);
+			name = BanquetRecord;
+			sourceTree = "<group>";
+		};
+		D48FAC791E4DBF2200B9E1B8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D48FAC7A1E4DBF3900B9E1B8 /* SettingVC.h */,
+				D48FAC7B1E4DBF3900B9E1B8 /* SettingVC.m */,
+				D41893F01E558DD600978041 /* DataDefineVC.h */,
+				D41893F11E558DD600978041 /* DataDefineVC.m */,
+				D406FB491E55A22000A840FA /* DataSetVC.h */,
+				D406FB4A1E55A22000A840FA /* DataSetVC.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D46B288F1E4C5AC00027CCC5 /* CashGift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D46B28A71E4C5AC10027CCC5 /* Build configuration list for PBXNativeTarget "CashGift" */;
+			buildPhases = (
+				07CB7B56FD4B5299B06ACF29 /* [CP] Check Pods Manifest.lock */,
+				D46B288C1E4C5AC00027CCC5 /* Sources */,
+				D46B288D1E4C5AC00027CCC5 /* Frameworks */,
+				D46B288E1E4C5AC00027CCC5 /* Resources */,
+				891E6F4ED1AA2FF273621C9F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CashGift;
+			productName = CashGift;
+			productReference = D46B28901E4C5AC00027CCC5 /* CashGift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D46B28881E4C5AC00027CCC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = ZX;
+				TargetAttributes = {
+					D46B288F1E4C5AC00027CCC5 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = 869P39T2QE;
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = D46B288B1E4C5AC00027CCC5 /* Build configuration list for PBXProject "CashGift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D46B28871E4C5AC00027CCC5;
+			productRefGroup = D46B28911E4C5AC00027CCC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D46B288F1E4C5AC00027CCC5 /* CashGift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D46B288E1E4C5AC00027CCC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D40F388F23BDBD8100C28EB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07CB7B56FD4B5299B06ACF29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CashGift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		891E6F4ED1AA2FF273621C9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CashGift/Pods-CashGift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/EmptyDataSet/EmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONKit-ZW/JSONKit_ZW.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ZWDataProvider/ZWDataProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/ZWModel/ZWModel.framework",
+				"${BUILT_PRODUCTS_DIR}/ZWUtilityKit/ZWUtilityKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONKit_ZW.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZWDataProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZWModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZWUtilityKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CashGift/Pods-CashGift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D46B288C1E4C5AC00027CCC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D449157C1E56A0BC0096CF5D /* ConfigSetting.m in Sources */,
+				D46C78231E52F876005DD349 /* BaseVC.m in Sources */,
+				D48FAC7C1E4DBF3900B9E1B8 /* SettingVC.m in Sources */,
+				D48FAC781E4DA4C000B9E1B8 /* BanquetRecordVC.m in Sources */,
+				D46B289B1E4C5AC00027CCC5 /* HomeTabBarController.m in Sources */,
+				D406FB4B1E55A22000A840FA /* DataSetVC.m in Sources */,
+				D46B28981E4C5AC00027CCC5 /* AppDelegate.m in Sources */,
+				D46B28951E4C5AC00027CCC5 /* main.m in Sources */,
+				D46C78281E530299005DD349 /* AddParticipantVC.m in Sources */,
+				D41893F21E558DD600978041 /* DataDefineVC.m in Sources */,
+				D46C78201E52F6FF005DD349 /* EditBanquetVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D46B28A51E4C5AC10027CCC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D46B28A61E4C5AC10027CCC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D46B28A81E4C5AC10027CCC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B90E4189D43E7A7FBB1D4F /* Pods-CashGift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 869P39T2QE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashGift/ThirdPart",
+				);
+				GCC_PREFIX_HEADER = CashGift/PrefixHeader.pch;
+				INFOPLIST_FILE = CashGift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashGift/ThirdPart/Baidu",
+					"$(PROJECT_DIR)/CashGift/ThirdPart/WeChat",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wicarlink.Qiangbing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c232213c-4749-423e-b4fb-be50296b175f";
+				PROVISIONING_PROFILE_SPECIFIER = comm_dev;
+			};
+			name = Debug;
+		};
+		D46B28A91E4C5AC10027CCC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08E51FF690572A606F993C5E /* Pods-CashGift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashGift/ThirdPart",
+				);
+				GCC_PREFIX_HEADER = CashGift/PrefixHeader.pch;
+				INFOPLIST_FILE = CashGift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CashGift/ThirdPart/Baidu",
+					"$(PROJECT_DIR)/CashGift/ThirdPart/WeChat",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wicarlink.Qiangbing;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D46B288B1E4C5AC00027CCC5 /* Build configuration list for PBXProject "CashGift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46B28A51E4C5AC10027CCC5 /* Debug */,
+				D46B28A61E4C5AC10027CCC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D46B28A71E4C5AC10027CCC5 /* Build configuration list for PBXNativeTarget "CashGift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D46B28A81E4C5AC10027CCC5 /* Debug */,
+				D46B28A91E4C5AC10027CCC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D46B28881E4C5AC00027CCC5 /* Project object */;
+}
