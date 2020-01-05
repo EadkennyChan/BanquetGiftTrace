@@ -15,6 +15,7 @@
 @interface UserEntity : BaseEntity
 
 @property (nonatomic, copy, readonly)NSString *strToken;
+@property (nonatomic, copy, readonly)NSString *strName;
 
 #pragma mark - method
 

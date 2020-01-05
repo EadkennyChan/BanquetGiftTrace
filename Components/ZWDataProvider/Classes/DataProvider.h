@@ -37,6 +37,8 @@ UIKIT_EXTERN NSString *_Nonnull const g_strResultCodeKey;
 UIKIT_EXTERN NSString *_Nonnull const g_strResultMessageKey;
 UIKIT_EXTERN NSString *_Nonnull const g_strResultDataKey;
 
+UIKIT_EXTERN NSString *_Nonnull const kMSG_RELOGIN;
+
 @interface DataProvider : NSObject
 
 + (nonnull instancetype)shareInstance;

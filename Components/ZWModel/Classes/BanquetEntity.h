@@ -6,17 +6,18 @@
 //  Copyright © 2017年 ZX. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseEntity.h"
 #import "ParticipantEntity.h"
 
 /**
  *  宴会酒席 对象
  */
-@interface BanquetEntity : NSObject
+@interface BanquetEntity : BaseEntity
 
-@property (nonatomic, retain)NSString *strName;
-@property (nonatomic, retain)NSDate *date;
-@property (nonatomic, retain)NSDate *dateCreate;
+@property (nonatomic, copy)NSString *strName;
+@property (nonatomic, retain)NSString *date;
+@property (nonatomic, retain)NSString *dateCreate;
+@property (nonatomic, copy)NSString *strTbName;
 @property (nonatomic, retain, readonly)NSArray<ParticipantEntity *> *arrParticipant;
 - (void)addParticipant:(ParticipantEntity *)participant;
 

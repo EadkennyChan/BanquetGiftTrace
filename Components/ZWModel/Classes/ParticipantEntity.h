@@ -6,13 +6,13 @@
 //  Copyright © 2017年 ZX. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BaseEntity.h"
 #import <CoreGraphics/CoreGraphics.h>
 
 /**
  *  宴会来往登记贺礼信息
  */
-@interface ParticipantEntity : NSObject
+@interface ParticipantEntity : BaseEntity
 
 @property (nonatomic, retain)NSString *strName; //随礼人员
 @property (nonatomic, assign)CGFloat fAmount; //随礼金额

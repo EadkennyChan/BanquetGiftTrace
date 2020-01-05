@@ -77,29 +77,6 @@
         [m_mtArrayData addObject:partici];
     }
 }
-    
-+ (instancetype)banquetWithDBPath:(NSString *)strPath fileName:(NSString *)strFileName;
-{
-    BanquetEntity *banquet = [[BanquetEntity alloc] init];
-    
-    NSString *strFileNameTmp = [strFileName lastPathComponent];
-    strFileNameTmp = [strFileNameTmp stringByDeletingPathExtension];
-    NSArray *arrayFile = [strFileNameTmp componentsSeparatedByString:@"~$@"];
-    
-    NSDateFormatter *formatterDate = [NSDateFormatter new];
-    formatterDate.dateFormat = @"yyyy-MM-dd";
-    banquet.date = [formatterDate dateFromString:arrayFile.lastObject];
-    NSRange range = [strFileName rangeOfString:arrayFile.lastObject];
-    banquet.strName = [strFileName substringToIndex:range.location - 3];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *strFullPath = [strPath stringByAppendingPathComponent:strFileName];
-    if ([fileManager fileExistsAtPath:strFullPath])
-    {
-        [banquet loadParticipantFromDBFile:strFullPath];
-    }
-    return banquet;
-}
 
 - (void)saveBanquetToDBFilePath:(NSString *)strPath
 {

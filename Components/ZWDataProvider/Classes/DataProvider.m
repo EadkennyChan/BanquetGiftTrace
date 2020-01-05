@@ -17,6 +17,8 @@ NSString *const g_strResultCodeKey = @"Result";
 NSString *const g_strResultMessageKey = @"Error";
 NSString *const g_strResultDataKey = @"Data";
 
+NSString *const kMSG_RELOGIN = @"kMSG_RELOGIN";
+
 #pragma mark -
 
 NS_CLASS_AVAILABLE_IOS(7_0)

@@ -15,12 +15,22 @@
  *  @description:
  */
 #import <Foundation/Foundation.h>
+#import "BanquetEntity.h"
+#import "ParticipantEntity.h"
 
 @interface DBHandler : NSObject
+
++ (instancetype)shareInstance;
 
 /**
  *  加载 宴会酒席 列表
  */
-+ (void)loadBanquetList:
++ (nullable NSArray<BanquetEntity *> *)loadBanquetList;
++ (BOOL)addBanquet:(nonnull BanquetEntity *)banquet;
++ (BOOL)updateBanquet:(nonnull BanquetEntity *)banquet;
++ (BOOL)deleteBanquet:(nonnull BanquetEntity *)banquet;
+
++ (nullable NSArray<ParticipantEntity *> *)loadParticipants:(nonnull BanquetEntity *)Banquet;
++ (BOOL)addParticipants:(ParticipantEntity *)participant;
 
 @end
