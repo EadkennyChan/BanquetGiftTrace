@@ -15,13 +15,10 @@
 @interface BanquetEntity : BaseEntity
 
 @property (nonatomic, copy)NSString *strName;
-@property (nonatomic, retain)NSString *date;
-@property (nonatomic, retain)NSString *dateCreate;
+@property (nonatomic, retain)NSString *strDate;
+@property (nonatomic, retain)NSString *strDateCreate;
 @property (nonatomic, copy)NSString *strTbName;
-@property (nonatomic, retain, readonly)NSArray<ParticipantEntity *> *arrParticipant;
+- (nullable NSArray<ParticipantEntity *> *)getParticipants;
 - (void)addParticipant:(ParticipantEntity *)participant;
-
-+ (instancetype)banquetWithDBPath:(NSString *)strPath fileName:(NSString *)strFileName;
-- (void)saveBanquetToDBFilePath:(NSString *)strPath;
 
 @end

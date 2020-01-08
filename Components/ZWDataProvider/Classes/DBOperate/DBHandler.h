@@ -31,6 +31,6 @@
 + (BOOL)deleteBanquet:(nonnull BanquetEntity *)banquet;
 
 + (nullable NSArray<ParticipantEntity *> *)loadParticipants:(nonnull BanquetEntity *)Banquet;
-+ (BOOL)addParticipants:(ParticipantEntity *)participant;
++ (BOOL)addParticipant:(ParticipantEntity *)participant toBanquet:(nonnull BanquetEntity *)banquet;
 
 @end

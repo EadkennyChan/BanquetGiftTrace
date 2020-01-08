@@ -12,6 +12,7 @@
 #import "EditBanquetVC.h"
 #import "BanquetEntity.h"
 #import "FMDB/FMDatabase.h"
+#import "DBHandler.h"
 
 @interface BanquetRecordVC ()<UITableViewDataSource, UITableViewDelegate, EmptyDataSetSource, EmptyDataSetDelegate>
 {
@@ -21,6 +22,7 @@
     
     UITextField *m_tfName;
 }
+@property (nonatomic, retain)UITextField *tfNewBanquetName;
 @end
 
 @implementation BanquetRecordVC
@@ -63,7 +65,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)pushEditBanquet:(BanquetEntity *)banquet
+- (void)pushEditBanquetVC:(BanquetEntity *)banquet
 {
     EditBanquetVC *vc = [[EditBanquetVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
@@ -74,6 +76,9 @@
 
 - (void)loadBanquet
 {
+  m_mtArrayData = [NSMutableArray arrayWithArray:[DBHandler loadBanquetList]];
+}/*
+{
     NSString *strPath = [ConfigSetting dataDirectoryPath];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *arrayLogFileList = [[fileManager contentsOfDirectoryAtPath:strPath error:nil]
@@ -82,6 +87,19 @@
     {
         [m_mtArrayData addObject:[BanquetEntity banquetWithDBPath:strPath fileName:file]];
     }
+}*/
+
+- (void)addBanquet:(NSString *)name
+{
+  if (name.length > 0)
+  {
+    BanquetEntity *banquet = [[BanquetEntity alloc] init];
+    banquet.strName = name;
+    [m_mtArrayData addObject:banquet];
+    [m_tableView reloadData];
+    [DBHandler addBanquet:banquet];
+    [self performSelectorOnMainThread:@selector(pushEditBanquetVC:) withObject:banquet waitUntilDone:NO];
+  }
 }
 
 #pragma mark - btn clicked
@@ -95,29 +113,27 @@
   [alertControllerStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, strTitle.length)];
   [alert setValue:alertControllerStr forKey:@"attributedTitle"];
 
+  WeakObject(self);
   [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
     textField.font = [UIFont systemFontOfSize:15];
-    m_tfName = textField;
+    StrongObject(self);
+    strongObject.tfNewBanquetName = textField;
   }];
   [self presentViewController:alert animated:YES completion:nil];
   UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
   [cancelAction setValue:RGBCOLOR(3, 169, 244) forKey:@"_titleTextColor"];
   [alert addAction:cancelAction];
-  UIAlertAction *actionSetting = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-    if (m_tfName.text.length == 0)
+  UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    StrongObject(self);
+    if (strongObject.tfNewBanquetName.text.length == 0)
     {
       [SVProgressHUD showErrorWithStatus:@"请输入宴会名称"];
       return;
     }
-    BanquetEntity *banquet = [[BanquetEntity alloc] init];
-    banquet.strName = m_tfName.text;
-    [m_mtArrayData addObject:banquet];
-    [m_tableView reloadData];
-    [banquet saveBanquetToDBFilePath:[ConfigSetting dataDirectoryPath]];
-    [self performSelectorOnMainThread:@selector(pushEditBanquet:) withObject:banquet waitUntilDone:NO];
+    [strongObject addBanquet:strongObject.tfNewBanquetName.text];
   }];
 //  [actionSetting setValue:COLOR_MAIN forKey:@"_titleTextColor"];
-  [alert addAction:actionSetting];
+  [alert addAction:actionOk];
 }
 
 #pragma mark - UITableViewDelegate
@@ -138,9 +154,7 @@
     else
     {
         BanquetEntity *banquet = m_mtArrayData[indexPath.row];
-        NSDateFormatter *formatterDate = [NSDateFormatter new];
-        formatterDate.dateFormat = @"yyyy-MM-dd";
-        NSString *strText = [NSString stringWithFormat:@"%@(%@)", banquet.strName, [formatterDate stringFromDate:banquet.date]];
+        NSString *strText = [NSString stringWithFormat:@"%@(%@)", banquet.strName, banquet.strDate];
         cell.textLabel.text = strText;
     }
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
@@ -158,7 +172,7 @@
     else
     {
         BanquetEntity *banquet = m_mtArrayData[indexPath.row];
-        [self pushEditBanquet:banquet];
+        [self pushEditBanquetVC:banquet];
     }
 }
 #pragma mark - DZNEmptyDataSetSource

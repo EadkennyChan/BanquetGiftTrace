@@ -12,6 +12,7 @@
 #import "WXApi.h"
 #import <ZWUtilityKit/UIImage+StrethImage.h>
 #import <ZWUtilityKit/NSDictionary+NSData.h>
+#import "DBHandler.h"
 
 @interface EditBanquetVC ()<ZWMultiColTableViewDataSource>
 {
@@ -74,19 +75,22 @@
 
 - (void)btnClickedAdd
 {
-    AddParticipantVC *vc = [[AddParticipantVC alloc] init];
-    vc.arrayItemTitle = m_arrayTitle;
-    vc.blockFinished = ^(ParticipantEntity *participant) {
-        [_banquet addParticipant:participant];
-        [m_multiTbv reloadData];
-    };
-    [self.navigationController pushViewController:vc animated:YES];
+  AddParticipantVC *vc = [[AddParticipantVC alloc] init];
+  vc.arrayItemTitle = m_arrayTitle;
+  
+  WeakObject(self);
+  vc.blockFinished = ^(ParticipantEntity *participant) {
+    StrongObject(self);
+    [DBHandler addParticipant:participant toBanquet:strongObject.banquet];
+    [strongObject->m_multiTbv reloadData];
+  };
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)btnClickedShare//通过第三方社交软件分享
 {
     CGRect frame = self.view.bounds;
-    frame.size.height = (_banquet.arrParticipant.count + 2) * 44;
+    frame.size.height = ([_banquet getParticipants].count + 2) * 44;
     UIView *viewRoot = [[UIView alloc] initWithFrame:frame];
     frame = viewRoot.bounds;
     frame.size.height = 44;
@@ -167,7 +171,7 @@
 
 - (NSInteger)ZWMultiColTableView:(ZWMultiColTableView*)multiColTableView numberOfRowsInSection:(NSInteger)section
 {
-    return _banquet.arrParticipant.count;
+    return [_banquet getParticipants].count;
 }
 
 - (NSInteger)numberOfColumn:(ZWMultiColTableView*)multiColTableView
@@ -186,7 +190,7 @@
 {
     UILabel *l = (UILabel *)gridCell;
     l.textAlignment = NSTextAlignmentCenter;
-    ParticipantEntity *participant = _banquet.arrParticipant[indexPath.row];
+    ParticipantEntity *participant = [_banquet getParticipants][indexPath.row];
     switch (nCol)
     {
         case 0:

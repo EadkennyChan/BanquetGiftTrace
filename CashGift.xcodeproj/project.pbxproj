@@ -19,7 +19,6 @@
 		D447F4F81E4D6CC000E04578 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F71E4D6CC000E04578 /* SystemConfiguration.framework */; };
 		D447F4FA1E4D6D2A00E04578 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4F91E4D6D2A00E04578 /* libz.1.2.5.tbd */; };
 		D447F4FC1E4D6D3900E04578 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D447F4FB1E4D6D3900E04578 /* CoreTelephony.framework */; };
-		D449157C1E56A0BC0096CF5D /* ConfigSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = D449157B1E56A0BC0096CF5D /* ConfigSetting.m */; };
 		D44915841E56FA7B0096CF5D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D44915831E56FA7B0096CF5D /* libsqlite3.tbd */; };
 		D46B28951E4C5AC00027CCC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B28941E4C5AC00027CCC5 /* main.m */; };
 		D46B28981E4C5AC00027CCC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D46B28971E4C5AC00027CCC5 /* AppDelegate.m */; };
@@ -52,8 +51,6 @@
 		D447F4F71E4D6CC000E04578 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D447F4F91E4D6D2A00E04578 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D447F4FB1E4D6D3900E04578 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		D449157A1E56A0BC0096CF5D /* ConfigSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigSetting.h; sourceTree = "<group>"; };
-		D449157B1E56A0BC0096CF5D /* ConfigSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigSetting.m; sourceTree = "<group>"; };
 		D44915831E56FA7B0096CF5D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D46B28901E4C5AC00027CCC5 /* CashGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46B28941E4C5AC00027CCC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -162,8 +159,6 @@
 				D46B289A1E4C5AC00027CCC5 /* HomeTabBarController.m */,
 				D46C78211E52F876005DD349 /* BaseVC.h */,
 				D46C78221E52F876005DD349 /* BaseVC.m */,
-				D449157A1E56A0BC0096CF5D /* ConfigSetting.h */,
-				D449157B1E56A0BC0096CF5D /* ConfigSetting.m */,
 				D48FAC751E4DA49500B9E1B8 /* BanquetRecord */,
 				D48FAC791E4DBF2200B9E1B8 /* Setting */,
 				D46B28A41E4C5AC10027CCC5 /* Info.plist */,
@@ -338,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D449157C1E56A0BC0096CF5D /* ConfigSetting.m in Sources */,
 				D46C78231E52F876005DD349 /* BaseVC.m in Sources */,
 				D48FAC7C1E4DBF3900B9E1B8 /* SettingVC.m in Sources */,
 				D48FAC781E4DA4C000B9E1B8 /* BanquetRecordVC.m in Sources */,

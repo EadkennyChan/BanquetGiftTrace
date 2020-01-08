@@ -23,8 +23,11 @@
     self = [super init];
     if (self)
     {
-        _date = [NSDate date];
-        m_mtArrayData = [NSMutableArray arrayWithCapacity:1];
+      NSDateFormatter * fmtDate = [[NSDateFormatter alloc] init];
+      fmtDate.dateFormat = @"yyyy-MM-dd";
+      _strDate = [fmtDate stringFromDate:[NSDate date]];
+      _strDateCreate = _strDate;
+      m_mtArrayData = [NSMutableArray arrayWithCapacity:1];
     }
     return self;
 }
@@ -34,7 +37,7 @@
     [m_db close];
 }
     
-- (NSArray *)arrParticipant
+- (NSArray<ParticipantEntity *> *)getParticipants
 {
     return [m_mtArrayData copy];
 }
@@ -52,50 +55,4 @@
     [m_db executeUpdate:@"insert into banquet (name, amount, return, relation) values (?, ?, ?, ?)" ,participant.strName, [NSNumber numberWithFloat:participant.fAmount], strReturn, participant.strRelation];
     [m_db commit];
 }
-    
-- (void)loadParticipantFromDBFile:(NSString *)strFile
-{
-    FMDatabase *db = [FMDatabase databaseWithPath:strFile];
-    if (![db open])
-    {
-        db = nil;
-        return;
-    }
-    m_db = db;
-    
-    ParticipantEntity *partici;
-    NSString *strReturn;
-    FMResultSet *rs = [db executeQuery:@"select rowid, * from banquet"];
-    while ([rs next])
-    {
-        partici = [[ParticipantEntity alloc] init];
-        partici.strName = [rs stringForColumn:@"name"];
-        partici.fAmount = [rs doubleForColumn:@"amount"];
-        strReturn = [rs stringForColumn:@"return"];
-        partici.arrayReturn = [strReturn componentsSeparatedByString:@"*!&#"];
-        partici.strRelation = [rs stringForColumn:@"relation"];
-        [m_mtArrayData addObject:partici];
-    }
-}
-
-- (void)saveBanquetToDBFilePath:(NSString *)strPath
-{
-    NSDateFormatter *formatterDate = [NSDateFormatter new];
-    formatterDate.dateFormat = @"yyyy-MM-dd";
-    NSString *strDBFile = [strPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@~$@%@.db", _strName, [formatterDate stringFromDate:_date]]];
-    if (m_db == nil)
-    {
-        FMDatabase *db = [FMDatabase databaseWithPath:strDBFile];
-        if (![db open])
-        {
-            db = nil;
-            return;
-        }
-        if (![db executeUpdate:@"create table banquet (name text, amount double, return text, relation text)"])
-        {//建表失败
-        }
-        m_db = db;
-    }
-}
-
 @end

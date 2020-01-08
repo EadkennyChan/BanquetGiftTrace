@@ -80,7 +80,7 @@
     }
   }
   
-  BOOL bRet = [db executeUpdate:@"insert into banquet (name, updateDate, createDate, tbName) values (?, ?, ?, ?)" ,banquet.strName, banquet.date, banquet.dateCreate, banquet.strTbName];
+  BOOL bRet = [db executeUpdate:@"insert into banquet (name, updateDate, createDate, tbName) values (?, ?, ?, ?)" ,banquet.strName, banquet.strDate, banquet.strDateCreate, banquet.strTbName];
   [db commit];
   return bRet;
 }
@@ -103,8 +103,8 @@
     banquet = [[BanquetEntity alloc] init];
     banquet.strID = [rs stringForColumn:@"id"];
     banquet.strName = [rs stringForColumn:@"name"];
-    banquet.date = [rs stringForColumn:@"updateDate"];
-    banquet.dateCreate = [rs stringForColumn:@"createDate"];
+    banquet.strDate = [rs stringForColumn:@"updateDate"];
+    banquet.strDateCreate = [rs stringForColumn:@"createDate"];
     banquet.strTbName = [rs stringForColumn:@"tbName"];
     [array addObject:banquet];
   }
@@ -119,7 +119,7 @@
     return NO;
   }
   
-  BOOL bRet = [db executeUpdate:@"update banquet set name='%@', updateDate='%@', createDate='%@' where id='%@'", banquet.strName, banquet.date, banquet.dateCreate, banquet.strID];
+  BOOL bRet = [db executeUpdate:@"update banquet set name='%@', updateDate='%@', where id='%@'", banquet.strName, banquet.strDate, banquet.strID];
   [db commit];
   return bRet;
 }
@@ -147,7 +147,7 @@
   return nil;
 }
 
-+ (BOOL)addParticipants:(ParticipantEntity *)participant
++ (BOOL)addParticipant:(ParticipantEntity *)participant toBanquet:(BanquetEntity *)banquet
 {
   FMDatabase *db = [(DBHandler *)[self shareInstance] db];
   if (!db)
@@ -155,16 +155,18 @@
     return NO;
   }
   return nil;
-//  [m_mtArrayData addObject:participant];
-//  NSString *strReturn = @"";
-//  for (NSString *str in participant.arrayReturn)
-//  {
-//    strReturn = [strReturn stringByAppendingFormat:@"%@*!&#", str];
-//  }
-//  if (participant.arrayReturn.count > 0)
-//    strReturn = [strReturn substringToIndex:strReturn.length - 4];
-//  [m_db executeUpdate:@"insert into banquet (name, amount, return, relation) values (?, ?, ?, ?)" ,participant.strName, [NSNumber numberWithFloat:participant.fAmount], strReturn, participant.strRelation];
-//  [m_db commit];
+  [banquet addParticipant:participant];
+  NSString *strReturn = @"";
+  for (NSString *str in participant.arrayReturn)
+  {
+    strReturn = [strReturn stringByAppendingFormat:@"%@*!&#", str];
+  }
+  if (participant.arrayReturn.count > 0)
+  {
+    strReturn = [strReturn substringToIndex:strReturn.length - 4];
+  }
+  [m_db executeUpdate:@"insert into banquet (name, amount, return, relation) values (?, ?, ?, ?)" ,participant.strName, [NSNumber numberWithFloat:participant.fAmount], strReturn, participant.strRelation];
+  [m_db commit];
 }
 //
 //+ (void)loadParticipants:(BanquetEntity *)Banquet
