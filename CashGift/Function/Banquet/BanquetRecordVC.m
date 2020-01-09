@@ -67,11 +67,15 @@
 
 - (void)pushEditBanquetVC:(BanquetEntity *)banquet
 {
-    EditBanquetVC *vc = [[EditBanquetVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    vc.title = banquet.strName;
-    vc.banquet = banquet;
-    [self.navigationController pushViewController:vc animated:YES];
+  EditBanquetVC *vc = [[EditBanquetVC alloc] init];
+  vc.hidesBottomBarWhenPushed = YES;
+  vc.title = banquet.strName;
+  vc.banquet = banquet;
+  if (![banquet getParticipants])
+  {
+    [DBHandler loadParticipants:banquet];
+  }
+  [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)loadBanquet
@@ -93,8 +97,7 @@
 {
   if (name.length > 0)
   {
-    BanquetEntity *banquet = [[BanquetEntity alloc] init];
-    banquet.strName = name;
+    BanquetEntity *banquet = [BanquetEntity banquetWithName:name];
     [m_mtArrayData addObject:banquet];
     [m_tableView reloadData];
     [DBHandler addBanquet:banquet];

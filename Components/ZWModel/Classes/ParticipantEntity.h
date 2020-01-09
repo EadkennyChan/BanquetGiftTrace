@@ -14,9 +14,11 @@
  */
 @interface ParticipantEntity : BaseEntity
 
-@property (nonatomic, retain)NSString *strName; //随礼人员
+@property (nonatomic, retain, nonnull)NSString *strName; //随礼人员
 @property (nonatomic, assign)CGFloat fAmount; //随礼金额
-@property (nonatomic, retain)NSArray<NSString *> *arrayReturn;  //回礼
-@property (nonatomic, retain)NSString *strRelation; //关系
+@property (nonatomic, retain, nullable)NSArray<NSString *> *arrayReturn;  //回礼
+@property (nonatomic, retain, nullable)NSString *strRelation; //关系
+@property (nonatomic, retain, nonnull)NSString *strDate;
+@property (nonatomic, retain, nonnull)NSString *strDateCreate;
 
 @end

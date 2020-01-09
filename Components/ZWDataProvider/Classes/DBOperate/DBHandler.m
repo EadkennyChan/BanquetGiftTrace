@@ -67,14 +67,14 @@
   {
     return NO;
   }
-  banquet.strTbName = [NSString stringWithFormat:@"%ld", (long)[NSDate timeIntervalSinceReferenceDate]];
+  banquet.strTbName = [NSString stringWithFormat:@"_%ld", (long)[NSDate timeIntervalSinceReferenceDate]];
   // 判断表是否存在
   NSString *existsSql = [NSString stringWithFormat:@"select count(name) as countNum from banquet where type = 'table' and name = '%@'", banquet.strTbName];
   FMResultSet *rs = [db executeQuery:existsSql];
   if ([rs next])
   {
     NSInteger count = [rs intForColumn:@"countNum"];
-    if (count == 1)
+    if (count == 1) // 如果存在
     {
       banquet.strTbName = [banquet.strTbName stringByAppendingFormat:@"%d", arc4random() / 10];
     }
@@ -82,6 +82,15 @@
   
   BOOL bRet = [db executeUpdate:@"insert into banquet (name, updateDate, createDate, tbName) values (?, ?, ?, ?)" ,banquet.strName, banquet.strDate, banquet.strDateCreate, banquet.strTbName];
   [db commit];
+  if (bRet)
+  {
+    // 礼品登记人、金额、回礼、关系、更新日期、创建日期
+    NSString *strSql = [NSString stringWithFormat:@"create table if not exists %@ (id integer primary key AUTOINCREMENT, name text, amount text, feedback text, relation text, updateDate text, createDate text)", banquet.strTbName];
+    if (![db executeUpdate:strSql])
+    { //建表失败
+      return NO;
+    }
+  }
   return bRet;
 }
 
@@ -137,25 +146,46 @@
   return bRet;
 }
 
-+ (nullable NSArray<ParticipantEntity *> *)loadParticipants:(nonnull BanquetEntity *)Banquet
++ (nullable NSArray<ParticipantEntity *> *)loadParticipants:(nonnull BanquetEntity *)banquet
 {
   FMDatabase *db = [(DBHandler *)[self shareInstance] db];
-  if (!db)
+  if (!db || !banquet)
   {
     return nil;
   }
-  return nil;
+  NSString *strSql = [NSString stringWithFormat:@"select * from %@", banquet.strTbName];
+  FMResultSet *rs = [db executeQuery:strSql];
+  ParticipantEntity *participant;
+  NSMutableArray *array = [NSMutableArray array];
+  while ([rs next])
+  {
+    participant = [[ParticipantEntity alloc] init];
+    participant.strID = [rs stringForColumn:@"id"];
+    participant.strName = [rs stringForColumn:@"name"];
+    participant.fAmount = [rs stringForColumn:@"amount"].floatValue;
+    participant.strDate = [rs stringForColumn:@"updateDate"];
+    participant.strDateCreate = [rs stringForColumn:@"createDate"];
+    
+    NSString *strFeedbackGift = [rs stringForColumn:@"feedback"];
+    participant.arrayReturn = [strFeedbackGift componentsSeparatedByString:@"%@*!&#"];
+    participant.strRelation = [rs stringForColumn:@"relation"];
+    
+    [array addObject:participant];
+  }
+  [banquet setParticipants:array];
+  
+  return [array copy];
 }
 
 + (BOOL)addParticipant:(ParticipantEntity *)participant toBanquet:(BanquetEntity *)banquet
 {
   FMDatabase *db = [(DBHandler *)[self shareInstance] db];
-  if (!db)
+  if (!db || !banquet || !participant)
   {
     return NO;
   }
-  return nil;
   [banquet addParticipant:participant];
+  
   NSString *strReturn = @"";
   for (NSString *str in participant.arrayReturn)
   {
@@ -165,8 +195,14 @@
   {
     strReturn = [strReturn substringToIndex:strReturn.length - 4];
   }
-  [m_db executeUpdate:@"insert into banquet (name, amount, return, relation) values (?, ?, ?, ?)" ,participant.strName, [NSNumber numberWithFloat:participant.fAmount], strReturn, participant.strRelation];
-  [m_db commit];
+  NSString *strSql = [NSString stringWithFormat:@"insert into %@ (name, amount, feedback, relation, updateDate, createDate) values (?, ?, ?, ?, ?, ?)", banquet.strTbName];
+  BOOL bRet = [db executeUpdate:strSql ,participant.strName, [NSString stringWithFormat:@"%.2f", participant.fAmount], strReturn, participant.strRelation, participant.strDate, participant.strDateCreate];
+  if (bRet)
+  {
+    strSql = @"";
+  }
+  [db commit];
+  return bRet;
 }
 //
 //+ (void)loadParticipants:(BanquetEntity *)Banquet

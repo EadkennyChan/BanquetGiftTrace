@@ -476,7 +476,7 @@
 					"$(PROJECT_DIR)/CashGift/ThirdPart/Baidu",
 					"$(PROJECT_DIR)/CashGift/ThirdPart/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wicarlink.Qiangbing;
+				PRODUCT_BUNDLE_IDENTIFIER = zx.GiftRecord.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c232213c-4749-423e-b4fb-be50296b175f";
 				PROVISIONING_PROFILE_SPECIFIER = comm_dev;
@@ -502,7 +502,7 @@
 					"$(PROJECT_DIR)/CashGift/ThirdPart/Baidu",
 					"$(PROJECT_DIR)/CashGift/ThirdPart/WeChat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wicarlink.Qiangbing;
+				PRODUCT_BUNDLE_IDENTIFIER = zx.GiftRecord.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

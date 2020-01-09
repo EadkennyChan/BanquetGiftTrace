@@ -14,11 +14,15 @@
  */
 @interface BanquetEntity : BaseEntity
 
-@property (nonatomic, copy)NSString *strName;
-@property (nonatomic, retain)NSString *strDate;
-@property (nonatomic, retain)NSString *strDateCreate;
-@property (nonatomic, copy)NSString *strTbName;
+@property (nonatomic, copy, nonnull)NSString * strName;
+@property (nonatomic, retain, nonnull)NSString *strDate;
+@property (nonatomic, retain, nonnull)NSString *strDateCreate;
+@property (nonatomic, copy, nonnull)NSString *strTbName;
+
++ (BanquetEntity *)banquetWithName:(NSString *)strName;
+
 - (nullable NSArray<ParticipantEntity *> *)getParticipants;
-- (void)addParticipant:(ParticipantEntity *)participant;
+- (void)addParticipant:(nonnull ParticipantEntity *)participant;
+- (void)setParticipants:(nonnull NSArray<ParticipantEntity *> *)participants;
 
 @end

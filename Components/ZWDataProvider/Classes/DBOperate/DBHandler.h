@@ -18,6 +18,8 @@
 #import "BanquetEntity.h"
 #import "ParticipantEntity.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface DBHandler : NSObject
 
 + (instancetype)shareInstance;
@@ -34,3 +36,5 @@
 + (BOOL)addParticipant:(ParticipantEntity *)participant toBanquet:(nonnull BanquetEntity *)banquet;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -71,8 +71,7 @@
 
 - (void)setupTencent {
   //向微信注册
-//  [WXApi registerApp:@"wx55a9fde69fdb1b69"];
-  [WXApi registerApp:@"wx8d5a6b81493d0fbf"];  // OBD的微信
+  [WXApi registerApp:@"wxb0ab4bcaa3f19c8b"];
 //  [Bugly startWithAppId:@"0594122ab2"];
 }
 

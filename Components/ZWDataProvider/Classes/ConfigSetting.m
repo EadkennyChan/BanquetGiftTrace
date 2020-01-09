@@ -14,6 +14,7 @@
 {
     NSString *strPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     strPath = [strPath stringByAppendingPathComponent:@"data"];
+  NSLog(@"文档路径：%@", strPath);
     NSFileManager *fileManager = [NSFileManager defaultManager];
     
     BOOL bRet = YES;

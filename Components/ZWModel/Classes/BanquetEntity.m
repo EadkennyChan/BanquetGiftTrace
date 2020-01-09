@@ -7,12 +7,10 @@
 //
 
 #import "BanquetEntity.h"
-#import "FMDB/FMDatabase.h"
 
 @interface BanquetEntity ()
 {
     NSMutableArray<ParticipantEntity *> *m_mtArrayData;
-    FMDatabase *m_db;
 }
 @end
 
@@ -27,32 +25,29 @@
       fmtDate.dateFormat = @"yyyy-MM-dd";
       _strDate = [fmtDate stringFromDate:[NSDate date]];
       _strDateCreate = _strDate;
-      m_mtArrayData = [NSMutableArray arrayWithCapacity:1];
     }
     return self;
 }
-    
-- (void)dealloc
+
++ (BanquetEntity *)banquetWithName:(NSString *)strName
 {
-    [m_db close];
+  BanquetEntity *banquet = [[BanquetEntity alloc] init];
+  banquet.strName = strName;
+  return banquet;
 }
     
 - (NSArray<ParticipantEntity *> *)getParticipants
 {
-    return [m_mtArrayData copy];
+  return [m_mtArrayData copy];
 }
     
 - (void)addParticipant:(ParticipantEntity *)participant
 {
     [m_mtArrayData addObject:participant];
-    NSString *strReturn = @"";
-    for (NSString *str in participant.arrayReturn)
-    {
-        strReturn = [strReturn stringByAppendingFormat:@"%@*!&#", str];
-    }
-    if (participant.arrayReturn.count > 0)
-        strReturn = [strReturn substringToIndex:strReturn.length - 4];
-    [m_db executeUpdate:@"insert into banquet (name, amount, return, relation) values (?, ?, ?, ?)" ,participant.strName, [NSNumber numberWithFloat:participant.fAmount], strReturn, participant.strRelation];
-    [m_db commit];
+}
+
+- (void)setParticipants:(nonnull NSArray<ParticipantEntity *> *)participants
+{
+  m_mtArrayData = [NSMutableArray arrayWithArray:participants];
 }
 @end
