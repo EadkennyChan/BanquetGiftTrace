@@ -9,11 +9,13 @@
 #import "SettingVC.h"
 #import "DataDefineVC.h"
 #import <ZWUtilityKit/ZWTableViewCell.h>
+#import "TableShowSettingVC.h"
 
-@interface SettingVC ()<UITableViewDelegate, UITableViewDataSource>
-{
-    NSString *m_strCellID;
-    UITableView *m_tableView;
+@interface SettingVC ()<UITableViewDelegate, UITableViewDataSource> {
+  NSString *m_strCellID;
+  UITableView *m_tableView;
+  
+  NSArray<NSArray *> *m_arrTitles;
 }
 @end
 
@@ -25,6 +27,8 @@
   !self.title && self.navigationController.title && (self.title = self.navigationController.title);
   // Do any additional setup after loading the view.
   [self createTableView];
+  
+  m_arrTitles = @[@[@"数据字典", @"表单设置"], @[@"版本"]];
 }
     
 - (void)createTableView
@@ -47,50 +51,73 @@
 }
     
 #pragma mark - UITableViewDelegate
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return m_arrTitles.count;
+}
     
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return m_arrTitles[section].count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  return 10.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  return [UIView new];
 }
     
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ZWLabelLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWLabelLabelCellID];
-    switch (indexPath.row)
+  ZWLabelLabelCell *cell = [tableView dequeueReusableCellWithIdentifier:ZWLabelLabelCellID];
+  cell.labelTip.text = m_arrTitles[indexPath.section][indexPath.row];
+  switch (indexPath.section) {
+    case 0:
     {
-        case 0:
-        {
-            cell.labelTip.text = @"数据字典";
-            [cell showAccessory:YES image:@"iconArrow-right"];
-            cell.labelContent.text = nil;
-        }
-            break;
-        case 1:
-        {
-            cell.labelTip.text = @"版本";
-            cell.labelContent.textAlignment = NSTextAlignmentRight;
-            cell.labelContent.font = [UIFont systemFontOfSize:14];
-            cell.labelContent.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-            cell.labelContent.textAlignment = NSTextAlignmentRight;
-            [cell showAccessory:NO image:nil];
-        }
-            break;
-        default:
-            break;
+      [cell showAccessory:YES image:@"iconArrow-right"];
+      cell.labelContent.text = nil;
     }
-    return cell;
+      break;
+    case 1:
+    {
+      cell.labelContent.textAlignment = NSTextAlignmentRight;
+      cell.labelContent.font = [UIFont systemFontOfSize:14];
+      cell.labelContent.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+      cell.labelContent.textAlignment = NSTextAlignmentRight;
+      [cell showAccessory:NO image:nil];
+    }
+      break;
+    default:
+      break;
+  }
+  if (indexPath.row + 1 == m_arrTitles[indexPath.section].count) {
+    [cell hiddenBottomLine];
+  } else {
+    [cell showBottomSeparatorLine:YES color:nil];
+  }
+  return cell;
 }
     
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0)
-    {
-        DataDefineVC *vc = [[DataDefineVC alloc] init];
-        vc.hidesBottomBarWhenPushed = YES;
-        vc.title = @"数据字典";
-        [self.navigationController pushViewController:vc animated:YES];
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  UIViewController *vcRet;
+  if (indexPath.section == 0) {
+    if (indexPath.row == 0) {
+      DataDefineVC *vc = [[DataDefineVC alloc] init];
+      vcRet = vc;
+    } else if (indexPath.row == 1) {
+      TableShowSettingVC *vc = [[TableShowSettingVC alloc] init];
+      vcRet = vc;
     }
+  }
+  if (vcRet) {
+    vcRet.hidesBottomBarWhenPushed = YES;
+    vcRet.title = m_arrTitles[indexPath.section][indexPath.row];
+    [self.navigationController pushViewController:vcRet animated:YES];
+  }
 }
 
 @end

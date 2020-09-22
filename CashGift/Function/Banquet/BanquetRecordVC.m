@@ -80,8 +80,31 @@
 
 - (void)loadBanquet
 {
-  m_mtArrayData = [NSMutableArray arrayWithArray:[DBHandler loadBanquetList]];
-}/*
+  NSArray *arr = [DBHandler loadBanquetList];
+  if (arr.count == 0) {
+    arr = [self loadFromPlist];
+  }
+  m_mtArrayData = [NSMutableArray arrayWithArray:arr];
+}
+
+- (NSArray *)loadFromPlist {
+  BanquetEntity *banquet = [[BanquetEntity alloc] init];
+  banquet.strName = @"捐款明细";
+  
+  NSBundle *bundle = [NSBundle mainBundle];
+  NSString *strPath = [bundle pathForResource:@"捐款名单" ofType:@"plist"];
+  NSArray *arr = [NSArray arrayWithContentsOfFile:strPath];
+  
+  NSMutableArray *mtArr = [NSMutableArray arrayWithCapacity:arr.count];
+  ParticipantEntity *item;
+  for (NSDictionary *dic in arr) {
+    item = [[ParticipantEntity alloc] initWithDictionary:dic];
+    [mtArr addObject:item];
+  }
+  [banquet setParticipants:mtArr];
+  return @[banquet];
+}
+/*
 {
     NSString *strPath = [ConfigSetting dataDirectoryPath];
     NSFileManager *fileManager = [NSFileManager defaultManager];

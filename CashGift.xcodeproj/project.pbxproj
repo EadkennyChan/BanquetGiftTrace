@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6418807CC89ABE725AA0969A /* Pods_CashGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE637CED08F76433C95B1AC /* Pods_CashGift.framework */; };
+		918AE1A02518AD2100442340 /* TableShowSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 918AE19F2518AD2100442340 /* TableShowSettingVC.m */; };
+		91CA981D251795B1009CFDE0 /* 捐款名单.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91CA981C251795B1009CFDE0 /* 捐款名单.plist */; };
 		D406FB4B1E55A22000A840FA /* DataSetVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D406FB4A1E55A22000A840FA /* DataSetVC.m */; };
 		D40F388F23BDBD8100C28EB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40F388E23BDBD8000C28EB9 /* Assets.xcassets */; };
 		D41893F21E558DD600978041 /* DataDefineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D41893F11E558DD600978041 /* DataDefineVC.m */; };
@@ -34,6 +36,9 @@
 /* Begin PBXFileReference section */
 		08E51FF690572A606F993C5E /* Pods-CashGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashGift.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashGift/Pods-CashGift.release.xcconfig"; sourceTree = "<group>"; };
 		2CE637CED08F76433C95B1AC /* Pods_CashGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		918AE19E2518AD2100442340 /* TableShowSettingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableShowSettingVC.h; path = Function/Setting/TableShowSettingVC.h; sourceTree = "<group>"; };
+		918AE19F2518AD2100442340 /* TableShowSettingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TableShowSettingVC.m; path = Function/Setting/TableShowSettingVC.m; sourceTree = "<group>"; };
+		91CA981C251795B1009CFDE0 /* 捐款名单.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "捐款名单.plist"; sourceTree = SOURCE_ROOT; };
 		C9B90E4189D43E7A7FBB1D4F /* Pods-CashGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashGift/Pods-CashGift.debug.xcconfig"; sourceTree = "<group>"; };
 		D406FB481E5596F100A840FA /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D406FB491E55A22000A840FA /* DataSetVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataSetVC.h; path = Function/Setting/DataSetVC.h; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 				D48FAC751E4DA49500B9E1B8 /* BanquetRecord */,
 				D48FAC791E4DBF2200B9E1B8 /* Setting */,
 				D46B28A41E4C5AC10027CCC5 /* Info.plist */,
+				91CA981C251795B1009CFDE0 /* 捐款名单.plist */,
 				D46B28931E4C5AC00027CCC5 /* Supporting Files */,
 				D406FB481E5596F100A840FA /* PrefixHeader.pch */,
 			);
@@ -198,6 +204,8 @@
 				D41893F11E558DD600978041 /* DataDefineVC.m */,
 				D406FB491E55A22000A840FA /* DataSetVC.h */,
 				D406FB4A1E55A22000A840FA /* DataSetVC.m */,
+				918AE19E2518AD2100442340 /* TableShowSettingVC.h */,
+				918AE19F2518AD2100442340 /* TableShowSettingVC.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91CA981D251795B1009CFDE0 /* 捐款名单.plist in Resources */,
 				D40F388F23BDBD8100C28EB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +351,7 @@
 				D46B28951E4C5AC00027CCC5 /* main.m in Sources */,
 				D46C78281E530299005DD349 /* AddParticipantVC.m in Sources */,
 				D41893F21E558DD600978041 /* DataDefineVC.m in Sources */,
+				918AE1A02518AD2100442340 /* TableShowSettingVC.m in Sources */,
 				D46C78201E52F6FF005DD349 /* EditBanquetVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

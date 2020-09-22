@@ -10,4 +10,12 @@
 
 @implementation ParticipantEntity
 
+- (void)setName:(NSString *)name {
+  _strName = name;
+}
+
+- (void)setAmount:(CGFloat)amount {
+  _fAmount = amount;
+}
+
 @end

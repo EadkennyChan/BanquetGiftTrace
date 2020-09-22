@@ -35,6 +35,8 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>礼记需要访问相册</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>礼记需要访问相册</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
