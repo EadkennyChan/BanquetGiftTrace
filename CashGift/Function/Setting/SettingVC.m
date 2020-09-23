@@ -28,7 +28,7 @@
   // Do any additional setup after loading the view.
   [self createTableView];
   
-  m_arrTitles = @[@[@"数据字典", @"表单设置"], @[@"版本"]];
+  m_arrTitles = @[@[@"数据字典", @"表单显示设置"], @[@"版本"]];
 }
     
 - (void)createTableView
