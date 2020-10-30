@@ -1,10 +1,11 @@
 const fileCache = require('think-cache-file');
 const nunjucks = require('think-view-nunjucks');
 const fileSession = require('think-session-file');
-const mysql = require('think-model-mysql');
 const {Console, File, DateFile} = require('think-logger3');
 const path = require('path');
 const isDev = think.env === 'development';
+
+const dbConfig = isDev ? require('./db') : require('./db.production');
 
 /**
  * cache adapter config
@@ -34,17 +35,7 @@ exports.model = {
     logSql: isDev,
     logger: msg => think.logger.info(msg)
   },
-  mysql: {
-    handle: mysql,
-    database: '',
-    prefix: 'think_',
-    encoding: 'utf8',
-    host: '127.0.0.1',
-    port: '',
-    user: 'root',
-    password: 'root',
-    dateStrings: true
-  }
+  mysql: dbConfig
 };
 
 /**

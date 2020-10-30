@@ -22,11 +22,15 @@
     "thinkjs": "^3.0.0"
   },
   "devDependencies": {
-    "think-watcher": "^3.0.0",
+    "ava": "^0.18.0",
     "eslint": "^4.2.0",
     "eslint-config-think": "^1.0.0",
-    "ava": "^0.18.0",
-    "nyc": "^7.0.0"
+    "gulp": "^4.0.2",
+    "gulp-shell": "^0.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "nyc": "^7.0.0",
+    "think-watcher": "^3.0.0"
   },
   "repository": "",
   "license": "MIT",
