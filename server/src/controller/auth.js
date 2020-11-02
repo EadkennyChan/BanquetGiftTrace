@@ -8,31 +8,32 @@ module.exports = class extends Base {
     const password = this.post('password');
 
     const userModel = this.model('user');
-    let res = userModel.where({name, password});
-    let userInfo = await res.getField('name, realname, email, mobile, disabled', true);
+
     const userActionModel = this.model('user_action');
     userActionModel.userName = name;
     userActionModel.deviceInfo = this.header('device_info');
     userActionModel.type = 'login';
-    if (think.isEmpty(userInfo) || think.isEmpty(userInfo.name)) {
-      res = userModel.where({name});
-      userInfo = await res.getField('id, name', true);
-      if (think.isEmpty(userInfo) || think.isEmpty(userInfo.name)) {
-        userActionModel.userAccountIsNotExist();
-      } else {
-        userActionModel.userPasswordFail();
-      }
+
+    // 用户是否存在
+    let res = await userModel.where({name}).getField('id, realname, email, mobile, disabled, password', true);
+    if (think.isEmpty(res) || think.isEmpty(res.id)) {
+      userActionModel.userAccountIsNotExist();
       return this.failCorrectAccountOrPassword();
-    }
-    if (userInfo.disabled) {
+      // return this.fail('用户不存在')
+    } else if (res.disabled != '0') {
       userActionModel.userDisabled();
       return this.failAccountDisabled();
-    } else {
-      userActionModel.actionSuccess('登录成功');
-      const modelUserToken = this.model('user_token');
-      const token = await modelUserToken.generateToken2Save(name);
-      return this.success({...userInfo, token});
+    } else if (res.password != password) {
+      userActionModel.userPasswordFail();
+      return this.failCorrectAccountOrPassword();
     }
+    userActionModel.actionSuccess('登录成功');
+
+    const modelUserToken = this.model('user_token');
+    const token = await modelUserToken.generateToken2Save(name);
+    delete res.password;
+    delete res.disabled;
+    return this.success({...res, token});
   }
   async getUserInfoAction() {
     const token = this.header('token');

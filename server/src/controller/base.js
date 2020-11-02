@@ -1,4 +1,13 @@
+// const Moment = require('moment');
+
 module.exports = class extends think.Controller {
+  actionModel() {
+    const action = this.model('user_action');
+    action.deviceInfo = this.header('deviceInfo');
+    action.userName = this.header('token');
+    return action;
+  }
+
   async __before() {
     const isTokenValide = await this.isTokenValide();
     if (!isTokenValide) {
@@ -24,5 +33,32 @@ module.exports = class extends think.Controller {
 
   __call() {
     return this.fail(404, "该接口不存在");
+  }
+
+  async getList(modelName, whereMapKey) {
+    const model = this.model(modelName);
+
+    const currentPage = this.get('currentPage') || 1;
+    const pageSize = this.get('pageSize') || 20;
+    const keyword = this.get('keyword');
+    let res;
+    if (think.isEmpty(keyword)) {
+      res = await model.page(currentPage, pageSize).countSelect();
+    } else {
+      const whereMap = {};
+      whereMapKey && whereMapKey.forEach && whereMapKey.forEach(key => {
+        whereMap[key] = ['like', `%${keyword}%`];
+      });
+      res = await model.where(whereMap).page(currentPage, pageSize).countSelect();
+    }
+
+    res && res.data && res.data.forEach(item => {
+      delete item.deleted;
+      return item;
+    })
+    
+    const pagination = {...res};
+    delete pagination.data;
+    return {pagination, list: res.data};
   }
 };

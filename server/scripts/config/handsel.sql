@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `user_token` (
 -- ----------------------------
 CREATE TABLE IF NOT EXISTS `user_action` (
   `id` int(15) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(63) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
   `type` varchar(32) NOT NULL,
   `result` smallint(1) NOT NULL,
   `msg` varchar(64) NOT NULL,
