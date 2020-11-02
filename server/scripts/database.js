@@ -1,5 +1,10 @@
 const mysql = require('mysql');
-const dbConfig = require('../src/config/db.js');
+const isDev = process.env && process.env.NODE_ENV != 'production'
+const dbConfig = isDev ? require('../src/config/db.js') : require('../src/config/db.production.js');
+
+console.log('isDev = ', isDev, process.env.NODE_ENV);
+delete dbConfig.handle;
+delete dbConfig.database;
 
 const handler = (() => {
   let connection;

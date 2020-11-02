@@ -38,7 +38,7 @@ function initPm2Json(done) {
   fs.writeFileSync('./pm2.json', JSON.stringify(pm2Data, null, 2));
   done();
 };
-function pm2Start() {
+function pm2Start() {  
   return gulp.src('./').pipe(shell(
     ['pm2 reload pm2.json'],
     {cwd: '<%= file.path %>'}
@@ -51,7 +51,7 @@ function pm2Stop() {
   )).on('error', showError)
 }
 
-exports.start = series(initPm2Json, pm2Start);
+exports.start = series(cb => {process.env.NODE_ENV = 'production'; cb();}, initPm2Json, initDatabase, pm2Start);
 exports.stop = pm2Stop;
 
 /*
